@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -10,6 +11,9 @@ import { SignUpPage } from './../pages/sign-up/sign-up';
 import { TabsPage } from './../pages/tabs/tabs';
 import { LibraryPage } from './../pages/library/library';
 import { GenreCatalogPage } from './../pages/genre-catalog/genre-catalog';
+
+import { GenresProvider } from '../providers/genres/genres';
+import { IgdbDefaultRequestHeadersProvider } from '../providers/igdb-default-request-headers/igdb-default-request-headers';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { GenreCatalogPage } from './../pages/genre-catalog/genre-catalog';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -36,7 +41,9 @@ import { GenreCatalogPage } from './../pages/genre-catalog/genre-catalog';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GenresProvider,
+    IgdbDefaultRequestHeadersProvider
   ]
 })
 export class AppModule {}

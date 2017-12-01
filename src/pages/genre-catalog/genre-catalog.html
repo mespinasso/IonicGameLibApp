@@ -4,6 +4,12 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+    <ion-list>
+        <button ion-item *ngFor="let genre of genres">
+            {{ genre.name }}
+        </button>
+    </ion-list>
 
 </ion-content>

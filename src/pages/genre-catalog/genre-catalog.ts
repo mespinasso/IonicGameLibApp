@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, LoadingController } from 'ionic-angular';
 
 import { GenresProvider } from './../../providers/genres/genres';
+import { GenreModel } from './../../models/genre';
 
 @IonicPage()
 @Component({
@@ -9,6 +10,8 @@ import { GenresProvider } from './../../providers/genres/genres';
   templateUrl: 'genre-catalog.html',
 })
 export class GenreCatalogPage implements OnInit {
+
+  private genres: GenreModel[];
 
   constructor(
     private genresProvider: GenresProvider,
@@ -25,9 +28,7 @@ export class GenreCatalogPage implements OnInit {
       this.genresProvider.fetchGenres()
       .subscribe((data: any) => {
 
-        console.log('SUCCESSFUL REQUEST');
-        console.log(data);
-
+        this.genres = data;
         loadingAlert.dismiss();
 
       }, error => {

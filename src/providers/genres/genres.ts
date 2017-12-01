@@ -13,6 +13,6 @@ export class GenresProvider {
   ) {}
 
   fetchGenres() {
-    return this.http.get(igdbAPIRequests.genre + '?limit=50', {headers: this.defaultHeaders.getDefaultHeaders()});
+    return this.http.get(igdbAPIRequests.genre + '?limit=50&order=name:asc&fields=*', {headers: this.defaultHeaders.getDefaultHeaders()});
   }
 }

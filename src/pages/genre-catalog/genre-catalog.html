@@ -5,11 +5,9 @@
 </ion-header>
 
 <ion-content>
-
     <ion-list>
-        <button ion-item *ngFor="let genre of genres">
+        <button ion-item *ngFor="let genre of genres" (click)="onSelectGenre(genre)">
             {{ genre.name }}
         </button>
     </ion-list>
-
 </ion-content>

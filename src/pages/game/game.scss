@@ -1,0 +1,20 @@
+page-game {
+    .container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+    .bottom-left {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background: rebeccapurple;
+    }
+    .parallax-background {
+        width: 100%;
+        -moz-filter: blur(5px);
+        -webkit-filter: blur(5px);
+        filter: blur(3px);
+        transform: scale(1.1);
+    }
+}

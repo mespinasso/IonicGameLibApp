@@ -11,9 +11,12 @@ import { SignUpPage } from './../pages/sign-up/sign-up';
 import { TabsPage } from './../pages/tabs/tabs';
 import { LibraryPage } from './../pages/library/library';
 import { GenreCatalogPage } from './../pages/genre-catalog/genre-catalog';
+import { GameCatalogPage } from './../pages/game-catalog/game-catalog';
+import { GamePage } from './../pages/game/game';
 
 import { GenresProvider } from '../providers/genres/genres';
 import { IgdbDefaultRequestHeadersProvider } from '../providers/igdb-default-request-headers/igdb-default-request-headers';
+import { GamesProvider } from '../providers/games/games';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { IgdbDefaultRequestHeadersProvider } from '../providers/igdb-default-req
     SignUpPage,
     TabsPage,
     LibraryPage,
-    GenreCatalogPage
+    GenreCatalogPage,
+    GameCatalogPage,
+    GamePage
   ],
   imports: [
     BrowserModule,
@@ -36,14 +41,17 @@ import { IgdbDefaultRequestHeadersProvider } from '../providers/igdb-default-req
     SignUpPage,
     TabsPage,
     LibraryPage,
-    GenreCatalogPage
+    GenreCatalogPage,
+    GameCatalogPage,
+    GamePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GenresProvider,
-    IgdbDefaultRequestHeadersProvider
+    IgdbDefaultRequestHeadersProvider,
+    GamesProvider
   ]
 })
 export class AppModule {}

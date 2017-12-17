@@ -7,19 +7,19 @@
     <ion-content>
         <ion-list>
             <button ion-item icon-left (click)="onLoad(rootPage)" *ngIf="isAuthenticated">
-                <ion-icon name="game-controller-a"></ion-icon>
+                <ion-icon name="game-controller-a" class="menu-icons"></ion-icon>
                 Game Lib
             </button>
             <button ion-item icon-left (click)="onLoad(signinPage)" *ngIf="!isAuthenticated">
-                <ion-icon name="log-in"></ion-icon>
+                <ion-icon name="log-in" class="menu-icons"></ion-icon>
                 Sign-in
             </button>
             <button ion-item icon-left (click)="onLoad(signupPage)" *ngIf="!isAuthenticated">
-                <ion-icon name="person"></ion-icon>
+                <ion-icon name="person" class="menu-icons"></ion-icon>
                 Sign-up
             </button>
             <button ion-item icon-left (click)="onLogout()" *ngIf="isAuthenticated">
-                <ion-icon name="log-out"></ion-icon>
+                <ion-icon name="log-out" class="menu-icons"></ion-icon>
                 Log-out
             </button>
         </ion-list>

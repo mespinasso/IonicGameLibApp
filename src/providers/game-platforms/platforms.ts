@@ -39,11 +39,13 @@ export class PlatformsProvider {
   loadPlatformsFor(gamesList: GameModel[]) {
     var platformsIds: number[] = [];
 
-    for (let game of gamesList) {
-      if (game.platforms) {
-        for (let platformId of game.platforms) {
-          if (platformsIds.indexOf(platformId) < 0) {
-            platformsIds.push(platformId);
+    if (gamesList) {
+      for (let game of gamesList) {
+        if (game.platforms) {
+          for (let platformId of game.platforms) {
+            if (platformsIds.indexOf(platformId) < 0) {
+              platformsIds.push(platformId);
+            }
           }
         }
       }

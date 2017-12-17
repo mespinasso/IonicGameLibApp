@@ -88,15 +88,17 @@ export class GamesProvider {
     var unloadedGamesIds: number[] = [];
     var loadedGamesIds: number[] = [];
 
-    if (this.libraryGamesList) {
-      for (let loadedPlatformId of this.libraryGamesList) {
-        loadedGamesIds.push(loadedPlatformId.id);
+    if (gamesIds) {
+      if (this.libraryGamesList) {
+        for (let loadedPlatformId of this.libraryGamesList) {
+          loadedGamesIds.push(loadedPlatformId.id);
+        }
       }
-    }
-  
-    for (let gameId of gamesIds) {
-      if (loadedGamesIds.indexOf(gameId) < 0) {
-        unloadedGamesIds.push(gameId);
+    
+      for (let gameId of gamesIds) {
+        if (loadedGamesIds.indexOf(gameId) < 0) {
+          unloadedGamesIds.push(gameId);
+        }
       }
     }
 

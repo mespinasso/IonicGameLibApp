@@ -2,7 +2,7 @@ import { AuthProvider } from './../../providers/auth/auth';
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavParams, AlertController, LoadingController, ToastController } from 'ionic-angular';
 
-import { PlatformsProvider } from './../../providers/platforms/platforms';
+import { PlatformsProvider } from './../../providers/game-platforms/platforms';
 import { CompaniesProvider } from './../../providers/companies/companies';
 import { LibraryProvider } from './../../providers/library/library';
 import { GamesProvider } from './../../providers/games/games';

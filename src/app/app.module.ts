@@ -17,7 +17,7 @@ import { GamePage } from './../pages/game/game';
 import { GenresProvider } from '../providers/genres/genres';
 import { IgdbDefaultRequestHeadersProvider } from '../providers/igdb-default-request-headers/igdb-default-request-headers';
 import { GamesProvider } from '../providers/games/games';
-import { PlatformsProvider } from '../providers/platforms/platforms';
+import { PlatformsProvider } from '../providers/game-platforms/platforms';
 import { AuthProvider } from '../providers/auth/auth';
 import { LibraryProvider } from '../providers/library/library';
 import { CompaniesProvider } from '../providers/companies/companies';

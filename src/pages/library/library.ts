@@ -5,7 +5,7 @@ import { IonicPage, Loading, NavController, LoadingController } from 'ionic-angu
 
 import { LibraryProvider } from './../../providers/library/library';
 import { GamesProvider } from '../../providers/games/games';
-import { PlatformsProvider } from './../../providers/platforms/platforms';
+import { PlatformsProvider } from './../../providers/game-platforms/platforms';
 import { GameModel } from '../../models/game';
 import { PlatformModel } from './../../models/platform';
 import { PlatformHelper } from './../../shared/platform-helper';

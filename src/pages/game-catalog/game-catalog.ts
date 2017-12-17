@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavParams, NavController, LoadingController, Loading } from 'ionic-angular';
 
 import { GamesProvider } from './../../providers/games/games';
-import { PlatformsProvider } from './../../providers/platforms/platforms';
+import { PlatformsProvider } from './../../providers/game-platforms/platforms';
 import { LibraryProvider } from './../../providers/library/library';
 import { GenreModel } from './../../models/genre';
 import { GameModel } from './../../models/game';

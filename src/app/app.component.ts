@@ -9,6 +9,7 @@ import { TabsPage } from './../pages/tabs/tabs';
 import { SignUpPage } from './../pages/sign-up/sign-up';
 import { SignInPage } from './../pages/sign-in/sign-in';
 import { AuthProvider } from './../providers/auth/auth';
+import { GamesProvider } from './../providers/games/games';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +29,8 @@ export class MyApp {
       splashScreen: SplashScreen,
       private menuCtrl: MenuController,
       private loadingCtrl: LoadingController,
-      private authProvider: AuthProvider) {
+      private authProvider: AuthProvider,
+      private gamesProvider: GamesProvider) {
 
     firebase.initializeApp({
       apiKey: "AIzaSyBpaGC6uORjX2xY1HBWY7lz6WZxqi5doUo",
@@ -47,6 +49,7 @@ export class MyApp {
         loadingAlert.dismiss();
         this.isAuthenticated = false;
         this.rootPage = SignInPage;
+        this.gamesProvider.cleanLibraryCache();
       }
     });
 

@@ -84,6 +84,10 @@ export class GamesProvider {
     }
   }
 
+  cleanLibraryCache() {
+    this.libraryGamesList = [];
+  }
+
   private getUnloadedGamesIds(gamesIds: number[]) : number[] {
     var unloadedGamesIds: number[] = [];
     var loadedGamesIds: number[] = [];

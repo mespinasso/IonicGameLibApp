@@ -11,7 +11,10 @@
             <ion-avatar item-start>
                 <img src="{{game?.cover?.url}}" style="width: 36px; height: 48px; border-radius: 0 !important;;">
             </ion-avatar>
-            <p style="font-size: medium;">{{ game.name }}</p>
+            <div>
+                <ion-icon *ngIf="isGameInLibrary(game)" name="heart" style="color: red;"></ion-icon>
+                <p style="font-size: medium; display: inline;">{{ game.name }}</p>
+            </div>
             <p style="display: inline; font-size: 0.7em;" *ngFor="let gamePlatform of getPlatformsFor(game)"> | {{getPlatformDisplayName(gamePlatform)}}</p>
             <p style="display: inline; font-size: 0.7em;"> | </p>
         </button>

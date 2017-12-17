@@ -5,4 +5,6 @@ export const igdbAPIRequests = {
     genre: igdbAPILocation + '/genres/',
     game: igdbAPILocation + '/games/',
     platform: igdbAPILocation + '/platforms/'
-}
+};
+
+export const firebaseDatabaseLocation = 'https://ionicgamelibapp.firebaseio.com/';

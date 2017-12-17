@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, NavController, MenuController } from 'ionic-angular';
+import { Platform, NavController, MenuController, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -15,7 +15,7 @@ import { AuthProvider } from './../providers/auth/auth';
 })
 export class MyApp {
 
-  rootPage:any = TabsPage;
+  rootPage:any = SignInPage;
   signinPage = SignInPage;
   signupPage = SignUpPage;
   isAuthenticated = false;
@@ -27,6 +27,7 @@ export class MyApp {
       statusBar: StatusBar, 
       splashScreen: SplashScreen,
       private menuCtrl: MenuController,
+      private loadingCtrl: LoadingController,
       private authProvider: AuthProvider) {
 
     firebase.initializeApp({
@@ -34,11 +35,16 @@ export class MyApp {
       authDomain: "ionicgamelibapp.firebaseapp.com"
     });
 
+    let loadingAlert = this.loadingCtrl.create({ content: 'Checking status...' });
+    loadingAlert.present();
+
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
+        loadingAlert.dismiss();
         this.isAuthenticated = true;
         this.rootPage = TabsPage;
       } else {
+        loadingAlert.dismiss();
         this.isAuthenticated = false;
         this.rootPage = SignInPage;
       }
@@ -63,4 +69,3 @@ export class MyApp {
     this.nav.setRoot(SignInPage);
   }
 }
-

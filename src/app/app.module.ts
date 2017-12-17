@@ -19,6 +19,7 @@ import { IgdbDefaultRequestHeadersProvider } from '../providers/igdb-default-req
 import { GamesProvider } from '../providers/games/games';
 import { PlatformsProvider } from '../providers/platforms/platforms';
 import { AuthProvider } from '../providers/auth/auth';
+import { LibraryProvider } from '../providers/library/library';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AuthProvider } from '../providers/auth/auth';
     IgdbDefaultRequestHeadersProvider,
     GamesProvider,
     PlatformsProvider,
-    AuthProvider
+    AuthProvider,
+    LibraryProvider
   ]
 })
 export class AppModule {}

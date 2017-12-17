@@ -2,8 +2,11 @@
     <ion-navbar>
         <ion-title>{{ getPageTitle() }}</ion-title>
         <ion-buttons end>
-            <button ion-button icon-only (click)="onNewRecipe()">
-                <ion-icon name="add"></ion-icon>
+            <button *ngIf="!isGameInLibrary()" ion-button icon-only (click)="onAddGameToLibrary()">
+                <ion-icon name="heart-outline"></ion-icon>
+            </button>
+            <button *ngIf="isGameInLibrary()" ion-button icon-only (click)="onRemoveGameFromLibrary()">
+                <ion-icon name="heart"></ion-icon>
             </button>
         </ion-buttons>
     </ion-navbar>

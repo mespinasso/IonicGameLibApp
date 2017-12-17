@@ -3,6 +3,7 @@ import { IonicPage, NavParams, NavController, LoadingController, Loading } from 
 
 import { GamesProvider } from './../../providers/games/games';
 import { PlatformsProvider } from './../../providers/platforms/platforms';
+import { LibraryProvider } from './../../providers/library/library';
 import { GenreModel } from './../../models/genre';
 import { GameModel } from './../../models/game';
 import { PlatformModel } from './../../models/platform';
@@ -33,7 +34,8 @@ export class GameCatalogPage implements OnInit {
     private navCtrl: NavController,
     private loadingCtrl: LoadingController,
     private gamesProvider: GamesProvider,
-    private platformsProvider: PlatformsProvider) {}
+    private platformsProvider: PlatformsProvider,
+    private libraryProvider: LibraryProvider) {}
 
   ngOnInit() {
     this.genre = this.navParams.get('genre');
@@ -128,6 +130,10 @@ export class GameCatalogPage implements OnInit {
 
   getPlatformDisplayName(platform: PlatformModel) {
     return PlatformHelper.getPlatformDisplayName(platform);
+  }
+
+  isGameInLibrary(game: GameModel) : boolean {
+    return this.libraryProvider.isGameInLibrary(game.id);
   }
 
   cancelSearch(event) {

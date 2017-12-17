@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { IonicPage, LoadingController, AlertController } from 'ionic-angular';
+import { IonicPage, LoadingController, AlertController, NavController } from 'ionic-angular';
 
 import { AuthProvider } from './../../providers/auth/auth';
+import { SignInPage } from './../sign-in/sign-in';
 
 @IonicPage()
 @Component({
@@ -12,6 +13,7 @@ import { AuthProvider } from './../../providers/auth/auth';
 export class SignUpPage {
 
   constructor(
+    private navContoller: NavController,
     private authProvider: AuthProvider,
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController) {}
@@ -38,4 +40,7 @@ export class SignUpPage {
       });
   }
   
+  onLogIn() {
+    this.navContoller.setRoot(SignInPage);
+  }
 }

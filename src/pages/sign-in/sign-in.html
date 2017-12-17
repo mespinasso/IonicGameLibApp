@@ -6,12 +6,14 @@
             <ion-icon name="menu"></ion-icon>
         </button>
         </ion-buttons>
-        <ion-title>Sign-in</ion-title>
+        <ion-title>Sign-In</ion-title>
     </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
+<ion-content style="text-align: center;">
+    <img src="assets/imgs/game-controller.png" class="logo-image">
+    <h1 style="margin-bottom: 20px;">GameLib</h1>
     <form #f="ngForm" (ngSubmit)="onSignin(f)">
         <ion-list>
             <ion-item>
@@ -24,6 +26,12 @@
             </ion-item>
         </ion-list>
 
-        <button ion-button block type="submit" [disabled]="!f.valid">Sign-in</button>
+        <div padding style="margin-top: 30px;">
+            <button ion-button block type="submit" [disabled]="!f.valid">Sign-in</button>
+        </div>
     </form>
+
+    <div>
+        <button ion-button clear color="details" (click)="onRegister()">I don't have an account yet</button>
+    </div>
 </ion-content>

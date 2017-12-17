@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { AuthProvider } from './../auth/auth';
-import { GameModel } from '../../models/game';
 
 import { firebaseDatabaseLocation } from './../../shared/constants';
 

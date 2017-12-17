@@ -6,6 +6,8 @@ export class GameModel {
         public rating: number,
         public first_release_date: number,
         public platforms: number[],
+        public developers: number[],
+        public publishers: number[],
         public screenshots: any[]
     ) {}
 }

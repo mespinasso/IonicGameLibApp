@@ -20,6 +20,7 @@ import { GamesProvider } from '../providers/games/games';
 import { PlatformsProvider } from '../providers/platforms/platforms';
 import { AuthProvider } from '../providers/auth/auth';
 import { LibraryProvider } from '../providers/library/library';
+import { CompaniesProvider } from '../providers/companies/companies';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { LibraryProvider } from '../providers/library/library';
     GamesProvider,
     PlatformsProvider,
     AuthProvider,
-    LibraryProvider
+    LibraryProvider,
+    CompaniesProvider
   ]
 })
 export class AppModule {}

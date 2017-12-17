@@ -64,9 +64,6 @@ export class GameCatalogPage implements OnInit {
       this.isLoadingGames = false;
       this.dismissLoadingAlert();
 
-      // TODO: Remove log
-      console.log(this.games);
-
     }, error => {
 
       console.log('FAILED REQUEST');

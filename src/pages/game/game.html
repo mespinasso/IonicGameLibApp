@@ -27,10 +27,6 @@
 
         <ion-grid>
             <ion-row>
-                <!-- <ion-col col-3>
-                            <ion-icon name="star" style="color: #fff;" *ngIf="game.rating"></ion-icon>
-                            <p style="display: inline; color: #fff; font-weight: bold; font-size: small;">{{game.rating | number : '1.2-2'}}</p>
-                        </ion-col> -->
                 <ion-col style="text-align: right;">
                     <ion-badge item-end *ngFor="let gamePlatform of getPlatformsFor(game)">{{getPlatformDisplayName(gamePlatform)}}</ion-badge>
                 </ion-col>
@@ -40,5 +36,39 @@
     </div>
 
     <p padding style="color: white; margin: 0px;">{{game.summary}}</p>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                <p style="color: white; margin: 0px; font-weight: bold;">Release Date:</p>
+            </ion-col>
+            <ion-col col-8>
+                <!-- <p style="color: white; margin: 0px;" *ngFor="let gamePlatform of getPlatformsFor(game)">{{getPlatformDisplayName(gamePlatform)}}</p> -->
+                <p style="color: white; margin: 0px;">{{game.first_release_date | date: 'dd/MM/yyyy'}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                <p style="color: white; margin: 0px; font-weight: bold;">Developers:</p>
+            </ion-col>
+            <ion-col col-8>
+                <p style="color: white; margin: 0px;" *ngFor="let gameDeveloper of getDevelopersFor(game)">{{gameDeveloper.name}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                <p style="color: white; margin: 0px; font-weight: bold;">Publishers:</p>
+            </ion-col>
+            <ion-col col-8>
+                <p style="color: white; margin: 0px;" *ngFor="let gamePublisher of getPublishersFor(game)">{{gamePublisher.name}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

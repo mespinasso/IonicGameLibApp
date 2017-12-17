@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavParams, AlertController, LoadingController, ToastController } from 'ionic-angular';
 
 import { PlatformsProvider } from './../../providers/platforms/platforms';
+import { CompaniesProvider } from './../../providers/companies/companies';
 import { LibraryProvider } from './../../providers/library/library';
 import { GamesProvider } from './../../providers/games/games';
 import { GameModel } from './../../models/game';
@@ -24,12 +25,33 @@ export class GamePage implements OnInit {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private platformsProvider: PlatformsProvider,
+    private companiesProvider: CompaniesProvider,
     private libraryProvider: LibraryProvider,
     private gamesProvider: GamesProvider,
     private authProvider: AuthProvider) {}
 
   ngOnInit() {
     this.game = this.navParams.get('game');
+    this.loadCompanies();
+  }
+
+  loadCompanies() {
+    let loadingAlert = this.loadingCtrl.create({ content: 'Loading...' });
+    loadingAlert.present();
+
+    this.companiesProvider.loadCompaniesFor(this.game)
+    .subscribe(() => {
+
+      loadingAlert.dismiss();
+
+    }, error => {
+      
+      console.log('FAILED REQUEST');
+      console.log(error);
+
+      loadingAlert.dismiss();
+
+    })
   }
 
   onAddGameToLibrary() {
@@ -100,6 +122,14 @@ export class GamePage implements OnInit {
 
   getPlatformsFor(game: GameModel) {
     return this.platformsProvider.getPlatformsFor(game);
+  }
+
+  getDevelopersFor(game: GameModel) {
+    return this.companiesProvider.getDevelopersFor(game);
+  }
+
+  getPublishersFor(game: GameModel) {
+    return this.companiesProvider.getPublishersFor(game);
   }
 
   getPlatformDisplayName(platform: PlatformModel) {

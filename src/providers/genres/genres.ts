@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 import { IgdbDefaultRequestHeadersProvider } from './../igdb-default-request-headers/igdb-default-request-headers';
@@ -10,7 +10,7 @@ import { GenreModel } from './../../models/genre';
 @Injectable()
 export class GenresProvider {
 
-  private genresList;
+  private genresList : Observable<GenreModel[]>;
 
   constructor(
     private http: HttpClient,

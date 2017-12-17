@@ -1,14 +1,41 @@
 <ion-header>
     <ion-navbar>
         <ion-title>{{ getPageTitle() }}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="onNewRecipe()">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <div class="container">
-        <img src="https://igdb.spacechop.com/igdb/image/upload/t_screenshot_big/kdt90b2rbx4tmewaxur9.jpg" alt="Banner" class="parallax-background" style="width:100%;">
-        <div class="bottom-left">
-            <p>Bottom Left</p>
-        </div>
+<ion-content class="page-content">
+
+    <h1 class="page-title">{{game.name}}</h1>
+
+
+    <ion-slides *ngIf="game.screenshots" pager class="photo-slides">
+        <ion-slide *ngFor="let url of getLargeScreenshots()">
+            <img [src]="url" style="width:100%; height: auto;">
+        </ion-slide>
+    </ion-slides>
+
+    <div class="platforms-bages-container">
+
+        <ion-grid>
+            <ion-row>
+                <!-- <ion-col col-3>
+                            <ion-icon name="star" style="color: #fff;" *ngIf="game.rating"></ion-icon>
+                            <p style="display: inline; color: #fff; font-weight: bold; font-size: small;">{{game.rating | number : '1.2-2'}}</p>
+                        </ion-col> -->
+                <ion-col style="text-align: right;">
+                    <ion-badge item-end *ngFor="let gamePlatform of getPlatformsFor(game)">{{getPlatformDisplayName(gamePlatform)}}</ion-badge>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
     </div>
+
+    <p padding style="color: white; margin: 0px;">{{game.summary}}</p>
+
 </ion-content>

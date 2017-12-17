@@ -17,6 +17,8 @@ import { GamePage } from './../pages/game/game';
 import { GenresProvider } from '../providers/genres/genres';
 import { IgdbDefaultRequestHeadersProvider } from '../providers/igdb-default-request-headers/igdb-default-request-headers';
 import { GamesProvider } from '../providers/games/games';
+import { PlatformsProvider } from '../providers/platforms/platforms';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { GamesProvider } from '../providers/games/games';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GenresProvider,
     IgdbDefaultRequestHeadersProvider,
-    GamesProvider
+    GamesProvider,
+    PlatformsProvider,
+    AuthProvider
   ]
 })
 export class AppModule {}

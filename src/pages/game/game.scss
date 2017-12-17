@@ -1,20 +1,30 @@
 page-game {
-    .container {
-        position: relative;
-        text-align: center;
-        color: white;
+    .page-title {
+        margin: 0px;
+        padding: 20px 10px 20px 10px;
+        font-size: x-large;
+        font-weight: bold;
+        color: #fff;
+        background: color($colors, primary);
     }
-    .bottom-left {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        background: rebeccapurple;
+    .page-content {
+        background: color($colors, primary);
     }
-    .parallax-background {
-        width: 100%;
-        -moz-filter: blur(5px);
-        -webkit-filter: blur(5px);
-        filter: blur(3px);
-        transform: scale(1.1);
+    .photo-slides {
+        max-width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+    .swiper-pagination-bullet {
+        background: #fff;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background: color($colors, primary);
+        opacity: 1;
+    }
+    .platforms-bages-container {
+        background: color($colors, details);
+        ;
     }
 }

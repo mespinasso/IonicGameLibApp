@@ -12,7 +12,8 @@
                 <img src="{{game?.cover?.url}}" style="width: 36px; height: 48px; border-radius: 0 !important;;">
             </ion-avatar>
             <p style="font-size: medium;">{{ game.name }}</p>
-            <p>{{ game.first_release_date | date:'dd/MM/yyyy' }}</p>
+            <p style="display: inline; font-size: 0.7em;" *ngFor="let gamePlatform of getPlatformsFor(game)"> | {{getPlatformDisplayName(gamePlatform)}}</p>
+            <p style="display: inline; font-size: 0.7em;"> | </p>
         </button>
     </ion-list>
 </ion-content>
